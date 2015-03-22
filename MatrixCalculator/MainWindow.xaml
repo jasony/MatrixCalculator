@@ -11,14 +11,15 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1">
             <Label>Input Matrix</Label>
-            <TextBox Height="300" Name="MatrixInputTextbox" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
-            <Button Name="MatrixInverseButton" Click="MatrixInverseButton_Click">Inverse</Button>
-            <Button Name="MatrixDeterminantButton" Click="MatrixDeterminantButton_Click">Determinant</Button>
-            <Button Name="MatrixCholeskyButton" Click="MatrixCholeskyButton_Click">Cholesky</Button>
+            <TextBox Height="300" Name="MatrixInputTextbox" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding InputMatrixText}"></TextBox>
+            <Button Name="MatrixInverseButton" Command="{Binding Path=MatrixInverseCommand}">Inverse</Button>
+            <Button Name="MatrixDeterminantButton" Command="{Binding Path=MatrixDeterminantCommand}">Determinant</Button>
+            <Button Name="MatrixCholeskyButton" Command="{Binding Path=MatrixCholeskyCommand}">Cholesky</Button>
+            <Button Name="MatrixIdentityButton" Command="{Binding Path=MatrixIdentityCommand}">Identity</Button>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <Label>Output</Label>
-            <TextBox Name="MatrixOutputTextbox"  Height="300"></TextBox>
+            <TextBox Name="MatrixOutputTextbox"  Height="300" Text="{Binding OutputMatrixText}"></TextBox>
         </StackPanel>
     </Grid>
 </Window>
